@@ -14,5 +14,11 @@ engine = create_engine(db_string, connect_args=ssl)
 
 with engine.connect() as conn:
     result = conn.execute(text("SELECT * FROM jobs"))
-    print(result.all())
-
+    
+    result_all = result.fetchall()
+    print('type(result_all): ', type(result_all))
+    first_result = result_all[0]
+    print('type(first_result): ', type(first_result))
+    first_result_dict = first_result._asdict()
+    print('Type(first_result_dict): ', type(first_result_dict))
+    print(first_result_dict)
