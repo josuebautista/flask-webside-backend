@@ -1,0 +1,54 @@
+{% include 'nav.html' %}
+    <div class="container-fluid d-flex justify-content-center py-4">
+        <div class="card text-center w-75">
+            <div class="card-header">
+                <a href="{{ url_for('home') }}" class="text-decoration-none text-black text-center py-0">
+                    <div class="d-flex justify-content-center">
+                            <img src="https://www.svgrepo.com/show/494008/back.svg" class="pt-1" width="25px" height="37px"/><div class="fs-4 pt-1">Back</div>
+                    </div>
+                </a>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title pt-4">{{ job.title }}</h3>
+                <div class="row py-4">
+                    <div class="col-md-3 text-center px-2 align-self-center">
+                        <p class="fs-6">Responsabilities</p>
+                    </div>
+                    <div class="col-md-8 text-start px-1 ">
+                        <ul>
+                        {% for line in job.responsibilities.split('.') %}
+                            <li class="card-text text-secondary">{{line}}</li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="row py-4">
+                    <div class="col-md-3 text-center px-2 align-self-center">
+                        <p class="fs-6">Requirements</p>
+                    </div>
+                    <div class="col-md-8 text-start px-1">
+                        <ul>
+                        {% for line in job.requirements.split('.') %}
+                            <li class="card-text text-secondary">{{line}}</li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="row py-4 w-80">
+                    <div class="col-md-3 text-center px-2 align-self-center">
+                        <p class="fs-6">Salary</p>
+                    </div>
+                    <div class="col-md-8 text-start px-1 ">
+                        <p class="card-text text-secondary">{{ job.salary }} {{ job.currency}}</p>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary btn-lg"><h5>Apply</h5></a>
+            </div>
+            <div class="card-footer text-muted">
+                {{ job.location }}
+            </div>
+        </div>
+    </div>
+    
+{% include 'footer.html' %}
+
