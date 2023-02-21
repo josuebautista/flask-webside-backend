@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine, text
+import os
 
-db_string = "mysql+pymysql://40rifq6cfqip325ekzlp:pscale_pw_WqllJDnj3SOWFUDWqcu72upkwm5s47nd6LnAiJjUleI@us-east.connect.psdb.cloud/flask-webside-backend"
+db_string = os.getenv('DB_STRING_CONN')
 
 ssl={
     "ssl": {
