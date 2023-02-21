@@ -22,22 +22,7 @@
     <div class="container text-center py-4">
     <h3> Jobs List</h3>
         {% for job in jobs %}
-            <div class="container-fluid p-2 w-60">
-                <div class="card text-start">
-                    <h5 class="card-header">{{job['title']}}</h5>
-                    <div class="card-body">
-                        <div class="row justify-content-between">
-                            <div class="col-6 text-start">
-                                <p class="card-title"><strong>Location: </strong> {{job['location']}}</p>
-                                <p class="card-text"><strong>Salary: </strong> ${{job['salary']}} USD</p>
-                            </div>
-                            <div class="col-6 text-end align-self-center">
-                                <a href="mailto:alejandrojhb84@gmail.com?subject=Aplication%20for%20{{job['title']}}&body=My%20Name%3A%20%3Cyour%20name%20here%3E%0D%0AMy%20Resume%20Link%3A%20%3Cresume%20link%3E%0D%0AMy%20LinkedIn%3A%20%3Cyour%20linkedin%20here%3E" class="btn btn-outline-info middle">Apply</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% include 'job_item.html' %}
         {% endfor%}
     </div>
     <div class="container text-center py-4">
