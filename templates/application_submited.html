@@ -1,0 +1,34 @@
+{% include 'nav.html' %}
+<div class="container-fluid text-center py-4">
+    <p class="fs-5">Your application for the role {{ role.title }} at My Company Name has been submited!</p>
+    <div class="row d-flex justify-content-center py-5">
+        <div class="col-9">
+            <div class="card">
+                <div class="card-header">
+                    Information Submited
+                </div>
+                <div class="card-body">
+                    <h4>Full Name</h4>
+                    <div>{{application['full_name']}}</div>
+                    
+                    <h4>Email</h4>
+                    <div>{{application['email']}}</div>
+                    
+                    <h4>LinkedIn URL</h4>
+                    <div>{{application['linkedin_url']}}</div>
+                    
+                    <h4>Education</h4>
+                    <div>{{application['education']}}</div>
+                    
+                    <h4>Work Experience</h4>
+                    <div>{{application['work_experience']}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('home') }}">
+        Go To Home Page
+    </a>
+</div>
+
+{% include 'footer.html' %}

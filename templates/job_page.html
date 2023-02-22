@@ -42,13 +42,13 @@
                         <p class="card-text text-secondary">{{ job.salary }} {{ job.currency}}</p>
                     </div>
                 </div>
-                <a href="#" class="btn btn-primary btn-lg"><h5>Apply</h5></a>
             </div>
             <div class="card-footer text-muted">
                 {{ job.location }}
             </div>
         </div>
     </div>
+    {% include 'application_form.html' %}
     
 {% include 'footer.html' %}
 

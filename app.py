@@ -1,5 +1,5 @@
-from flask import Flask, jsonify, render_template
-from database import load_jobs_from_db, load_job_from_db
+from flask import Flask, jsonify, render_template, request
+from database import load_jobs_from_db, load_job_from_db, add_application_to_db
 import re
 
 app = Flask(__name__)
@@ -34,6 +34,20 @@ def show_job(id: int):
         job=job, 
         title=job['title'],
         company_name='My company name'
+        )
+
+
+@app.route('/job/<id>/apply', methods=['POST'])
+def apply_job(id: int):
+    job = load_job_from_db(id)
+    data = request.form
+    add_application_to_db(id, data)
+    return render_template(
+        'application_submited.html', 
+        company_name='My company name',
+        application = data, 
+        title= 'Submited',
+        role=job
         )
 
 if __name__ == '__main__':
