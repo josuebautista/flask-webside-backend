@@ -36,6 +36,11 @@ def show_job(id: int):
         company_name='My company name'
         )
 
+@app.route('/api/job/<id>')
+def show_job_json(id: int):
+    job = load_job_from_db(id)
+    return jsonify(job)
+
 
 @app.route('/job/<id>/apply', methods=['POST'])
 def apply_job(id: int):

@@ -4,15 +4,15 @@
         <div class="col-8 text-center">
             <form action="/job/{{job['id']}}/apply" class="w-60" method="POST">
                 <div class="form-floating mb-3">
-                    <input  name="full_name" type="text" class="form-control" id="floatingInputName" placeholder="Name">
+                    <input required="true" name="full_name" type="text" class="form-control" id="floatingInputName" placeholder="Name">
                     <label for="floatingInputName">Full Name</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input  name="email" type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com">
+                    <input required="true" name="email" type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com">
                     <label for="floatingInputEmail">Email address</label>
                 </div>
                 <div class="form-floating">
-                    <input  name="linkedin_url" type="text" class="form-control" id="floatingLinkedIn" placeholder="LinkedIn">
+                    <input required="true" name="linkedin_url" type="text" class="form-control" id="floatingLinkedIn" placeholder="LinkedIn">
                     <label for="floatingLinkedIn">LinkedIn</label>
                 </div>
                 <div class="form-floating my-3">
